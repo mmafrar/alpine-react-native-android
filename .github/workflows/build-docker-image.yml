@@ -1,0 +1,19 @@
+name: Build Docker Image
+on:
+  push:
+    branches:
+      - main
+jobs:
+  setup-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Login to GitHub Package Registry
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.repository }} --password-stdin
+      - name: Build the Docker image
+        run: docker build -t alpine-react-native-android:latest .
+      - name: Tag the Docker image
+        run: docker tag alpine-react-native-android:latest docker.pkg.github.com/mmafrar/alpine-react-native-android/alpine-react-native-android:latest
+      - name: Push the Docker image to the registry
+        run: docker push docker.pkg.github.com/mmafrar/alpine-react-native-android/alpine-react-native-android:latest
