@@ -14,6 +14,6 @@ jobs:
       - name: Build the Docker image
         run: docker build -t alpine-react-native-android:latest .
       - name: Tag the Docker image
-        run: docker tag alpine-react-native-android:latest docker.pkg.github.com/mmafrar/alpine-react-native-android/alpine-react-native-android:latest
+        run: docker tag alpine-react-native-android:latest docker.pkg.github.com/mmafrar/alpine-react-native-android/main:latest
       - name: Push the Docker image to the registry
-        run: docker push docker.pkg.github.com/mmafrar/alpine-react-native-android/alpine-react-native-android:latest
+        run: docker push docker.pkg.github.com/mmafrar/alpine-react-native-android/main:latest

@@ -4,12 +4,12 @@ There are many challenges in getting an Android project built inside a lightweig
 # Usage Example
 This image can be used as a base image in your Dockerfile,
 
-`FROM docker.pkg.github.com/mmafrar/alpine-react-native-android/alpine-react-native-android:latest`
+`FROM docker.pkg.github.com/mmafrar/alpine-react-native-android/main:latest`
 
 `FROM mmafrar/alpine-react-native-android:latest`
 
 Else you can directly pull the Docker image,
 
-`docker pull docker.pkg.github.com/mmafrar/alpine-react-native-android/alpine-react-native-android:latest`
+`docker pull docker.pkg.github.com/mmafrar/alpine-react-native-android/main:latest`
 
 `docker pull mmafrar/alpine-react-native-android:latest`
