@@ -12,6 +12,6 @@ jobs:
       - name: Login to GitHub Package Registry
         run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
       - name: Build and tag the Docker image
-        run: docker build . --tag ghcr.io/mmafrar/alpine-react-native-android:$GITHUB_SHA --cache-from ghcr.io/mmafrar/alpine-react-native-android:latest
+        run: docker build . --tag ghcr.io/mmafrar/alpine-react-native-android:latest
       - name: Push the Docker image to the registry
-        run: docker push ghcr.io/mmafrar/alpine-react-native-android:$GITHUB_SHA
+        run: docker push ghcr.io/mmafrar/alpine-react-native-android:latest
