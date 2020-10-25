@@ -10,10 +10,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Login to GitHub Package Registry
-        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.repository }} --password-stdin
-      - name: Build the Docker image
-        run: docker build -t alpine-react-native-android:latest .
-      - name: Tag the Docker image
-        run: docker tag alpine-react-native-android:latest docker.pkg.github.com/mmafrar/alpine-react-native-android/main:latest
+        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+      - name: Build and tag the Docker image
+        run: docker build . --tag ghcr.io/mmafrar/alpine-react-native-android:$GITHUB_SHA --cache-from ghcr.io/mmafrar/alpine-react-native-android:latest
       - name: Push the Docker image to the registry
-        run: docker push docker.pkg.github.com/mmafrar/alpine-react-native-android/main:latest
+        run: docker push ghcr.io/mmafrar/alpine-react-native-android:$GITHUB_SHA
