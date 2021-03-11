@@ -5,7 +5,8 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/latest-
 RUN npm add -g yarn
 
 RUN curl -O https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
-RUN mkdir -p /usr/lib/android-sdk
-RUN unzip commandlinetools-linux-6858069_latest.zip -d /usr/lib/android-sdk
+RUN mkdir -p /usr/lib/android-sdk/cmdline-tools
+RUN unzip commandlinetools-linux-6858069_latest.zip -d /usr/lib/android-sdk/cmdline-tools
 RUN rm commandlinetools-linux-6858069_latest.zip
+RUN mv /usr/lib/android-sdk/cmdline-tools/cmdline-tools/ /usr/lib/android-sdk/cmdline-tools/latest/
 RUN yes | /usr/lib/android-sdk/cmdline-tools/bin/sdkmanager --licenses
