@@ -9,4 +9,4 @@ RUN mkdir -p /usr/lib/android-sdk/cmdline-tools
 RUN unzip commandlinetools-linux-6858069_latest.zip -d /usr/lib/android-sdk/cmdline-tools
 RUN rm commandlinetools-linux-6858069_latest.zip
 RUN mv /usr/lib/android-sdk/cmdline-tools/cmdline-tools/ /usr/lib/android-sdk/cmdline-tools/latest/
-RUN yes | /usr/lib/android-sdk/cmdline-tools/bin/sdkmanager --licenses
+RUN yes | /usr/lib/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses
