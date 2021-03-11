@@ -8,4 +8,4 @@ RUN curl -O https://dl.google.com/android/repository/commandlinetools-linux-6858
 RUN mkdir -p /usr/lib/android-sdk/cmdline-tools
 RUN unzip commandlinetools-linux-6858069_latest.zip -d /usr/lib/android-sdk/cmdline-tools
 RUN rm commandlinetools-linux-6858069_latest.zip
-RUN yes | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses
+RUN yes | /usr/lib/android-sdk/cmdline-tools/bin/sdkmanager --licenses
