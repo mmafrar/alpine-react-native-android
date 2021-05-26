@@ -1,7 +1,7 @@
 FROM frolvlad/alpine-glibc
 
-RUN apk add --no-cache bash curl unzip libstdc++ openjdk8
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/ nodejs=14.16.0-r0 npm=14.16.0-r0
+RUN apk add --no-cache bash curl unzip libstdc++ openjdk8 git
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/ nodejs=14.16.1-r1 npm=14.16.1-r1
 RUN npm add -g yarn
 
 RUN curl -O https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
